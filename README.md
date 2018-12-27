@@ -8,9 +8,9 @@
     </embed>
 </object>
 
-## Steps
+## For Microsoft SQL
 
-### 1- Open the SQL Connection and Query Database with the Action step
+### Open the SQL Connection and Query Database with the Action step
 
 ```javascript
 var connectionURL = "jdbc:sqlserver://;serverName=localhost\\OLSupport;integratedSecurity=true;databaseName=Northwind";
@@ -29,19 +29,19 @@ resultSet.next();
 }
 ```
 
-### 2- Extract the desired fields from the SQL Query resultSet with the Extract step
+### Extract the desired fields from the SQL Query resultSet with the Extract step
 ```javascript
 let companyName;
 companyName = resultSet.getRow() ? resultSet.getString("companyName") : "";
 ```
 
-### 3- Close the resultSet and SQL connection with the Action step
+### Close the resultSet and SQL connection with the Action step
 ```javascript
 resultSet.close();
 sqlConnection.close();
 ```
 
-# For Access, CSV and Excel
+## For Access, CSV and Excel
 
 **Connecting and querying the database:**
 
