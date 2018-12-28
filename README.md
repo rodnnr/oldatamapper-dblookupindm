@@ -1,20 +1,17 @@
-* [Introduction](Introduction)
-* [Microsoft SQL Lookup](Microsoft-SQL-Database-Lookup)
-  * [[ Prerequisites for Microsoft SQL | Microsoft-SQL-Database-Lookup#Prerequisites-for-Microsoft-SQL ]]
-  * [[ SQL Statements with JDBC | Microsoft-SQL-Database-Lookup#Processing-SQL-Statements-with-JDBC ]]
-  * [[ Application in Connect Data Mapper | Microsoft-SQL-Database-Lookup#Application-in-Connect-Data-Mapper ]]
-* [Access, Excel and CSV Lookup](Microsoft-Access,-Microsoft-Excel-and-CSV-Lookup)
-  * [[ Prerequisites | Microsoft-Access,-Microsoft-Excel-and-CSV-Lookup#Prerequisites ]]
-  * [[ Microsoft Access Database Engine 2010 | Microsoft-Access,-Microsoft-Excel-and-CSV-Lookup#Microsoft-Access-Database-Engine-2010-for-64-bitWindows ]]
-  *  [[ Create 64-bit Data Source Names (DSN) | Microsoft-Access,-Microsoft-Excel-and-CSV-Lookup#Create-64-bit-Data-Source-Names-(DSN) ]]
-  * [[ Building JDBC-ODBC Connection URL | Microsoft-Access,-Microsoft-Excel-and-CSV-Lookup#Building-JDBC-ODBC-Connection-URL ]]
-  * [[ Querying a Microsoft Access Database | Microsoft-Access,-Microsoft-Excel-and-CSV-Lookup#Querying-a-Microsoft-Access-Database ]]
-  * [[ Querying a Microsoft Excel Database | Microsoft-Access,-Microsoft-Excel-and-CSV-Lookup#Querying-a-Microsoft-Excel-Database ]]
-  * [[ Querying a CSV file | Microsoft-Access,-Microsoft-Excel-and-CSV-Lookup#Querying-a-CSV-file ]]
-  * [[ Retrieving data from a Result Set | Microsoft-Access,-Microsoft-Excel-and-CSV-Lookup#Retrieving-data-from-a-Result-Set ]]
-  * [[ Closing JDBC Connections | Microsoft-Access,-Microsoft-Excel-and-CSV-Lookup#Closing-JDBC-Connections ]]
-  
-  # Introduction
+
+# Database Lookup within Connect Data Mapper
+
+* [Introduction](#Introduction)
+
+
+<object data="https://github.com/rodnnr/olconnect-dblookupindm/blob/master/SQL_Lookup_in_Connect_DataMapper.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://github.com/rodnnr/olconnect-dblookupindm/blob/master/SQL_Lookup_in_Connect_DataMapper.pdf">
+        <p>D
+		ownload the guide in PDF format: <a href="https://github.com/rodnnr/olconnect-dblookupindm/blob/master/SQL_Lookup_in_Connect_DataMapper.pdf">Download SQL Lookup in Connect DataMapper</a>.</p>
+    </embed>
+</object>
+
+## Introduction
 
 Sometimes, the information and data that is required to build a form is scattered across multiple data sources such as Database Management Systems (DBMS) and it is often a challenge to get all the required data in one source. Luckily, the OLConnect Data Mapper can use the JDBC (Java Database Connectivity) driver to connect to these third-party DBMS. JDBC makes it possible to establish a connection with a database, send SQL statements and process the results.
 This guide aims to provide the steps that are required to retrieve data from a remote Microsoft SQL Server using the “Action” step in the Data Mapper.
@@ -132,7 +129,7 @@ sqlConnection.close();
 ```
 ![close connection](https://github.com/rodnnr/oldatamapper-dblookupindm/blob/master/assets/10.png)
 
-[Back to top](Microsoft-SQL-Database-Lookup#Prerequisites-for-Microsoft-SQL)
+
 
 
 ## Prerequisites
@@ -256,4 +253,4 @@ accessConnection.close();
 Reference JDBC Basics
 https://docs.oracle.com/javase/tutorial/jdbc/basics/
 
-[Back to top](Microsoft-Access,-Microsoft-Excel-and-CSV-Lookup#Prerequisites)
+
