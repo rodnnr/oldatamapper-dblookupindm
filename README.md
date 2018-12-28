@@ -9,8 +9,8 @@ Author: ![Rodrigue Noubissie](https://github.com/rodnnr)
   * [Application in Connect Data Mapper](#application-in-connect-data-mapper )
 * [Access Excel and CSV Lookup](#access-excel-and-csv-lookup)
   * [Prerequisites](#prerequisites )
-  * [Microsoft Access Database Engine 2010](#microsoft-access-database-engine-2010-for-64-bit-windows)
-  * [Create 64-bit Data Source Names](#create-64-bit-data-source-names)
+     * [Microsoft Access Database Engine 2010](#microsoft-access-database-engine-2010-for-64-bit-windows)
+     * [Create 64-bit Data Source Names](#create-64-bit-data-source-names)
   * [Building JDBC-ODBC Connection URL ](#building-jdbc-odbc-connection-url)
   * [Querying a Microsoft Access Database ](#querying-a-microsoft-access-database )
   * [Querying a Microsoft Excel Database ](#querying-a-microsoft-excel-database)
@@ -157,7 +157,7 @@ Since OL Connect is a 64-bit application, we will need the following two prerequ
 *	Microsoft Access Database Engine 2010 for 64-bit Windows
 *	64-bit DSN
 
-### Microsoft Access Database Engine 2010 for 64-bit Windows
+#### Microsoft Access Database Engine 2010 for 64-bit Windows
 
 Download and install Microsoft Access Database Engine 2010 for 64-bit Windows from the following link:
 http://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=13255
@@ -169,7 +169,7 @@ Note that launching the installation of a Microsoft Access Database Engine in th
 To have it run properly, you need to launch it from a command line with the “/passive” argument specified:
 ![install with passive mode](https://github.com/rodnnr/oldatamapper-dblookupindm/blob/master/assets/13.png)
 
-### Create 64-bit Data Source Names
+#### Create 64-bit Data Source Names
 To create a 64-bit System DSN:
 
 *	Open the Windows Control Panel and navigate to Administrative Tools > ODBC Data Source(64-bit)
