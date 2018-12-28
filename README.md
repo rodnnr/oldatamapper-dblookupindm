@@ -1,13 +1,16 @@
 
 # Database Lookup within Connect Data Mapper
 
-* [Introduction](#Introduction)
+* [Introduction](Introduction)
+* [Microsoft SQL Lookup](Microsoft-SQL-Database-Lookup)
+  * [Prerequisites for Microsoft SQL](Microsoft-SQL-Database-Lookup#Prerequisites-for-Microsoft-SQL)
+  * [SQL Statements with JDBC]( Microsoft-SQL-Database-Lookup#Processing-SQL-Statements-with-JDBC )
+  * [Application in Connect Data Mapper]( Microsoft-SQL-Database-Lookup#Application-in-Connect-Data-Mapper )
 
 
 <object data="https://github.com/rodnnr/olconnect-dblookupindm/blob/master/SQL_Lookup_in_Connect_DataMapper.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="https://github.com/rodnnr/olconnect-dblookupindm/blob/master/SQL_Lookup_in_Connect_DataMapper.pdf">
-        <p>D
-		ownload the guide in PDF format: <a href="https://github.com/rodnnr/olconnect-dblookupindm/blob/master/SQL_Lookup_in_Connect_DataMapper.pdf">Download SQL Lookup in Connect DataMapper</a>.</p>
+        <p>Download the guide in PDF format: <a href="https://github.com/rodnnr/olconnect-dblookupindm/blob/master/SQL_Lookup_in_Connect_DataMapper.pdf">Download SQL Lookup in Connect DataMapper</a>.</p>
     </embed>
 </object>
 
@@ -16,8 +19,9 @@
 Sometimes, the information and data that is required to build a form is scattered across multiple data sources such as Database Management Systems (DBMS) and it is often a challenge to get all the required data in one source. Luckily, the OLConnect Data Mapper can use the JDBC (Java Database Connectivity) driver to connect to these third-party DBMS. JDBC makes it possible to establish a connection with a database, send SQL statements and process the results.
 This guide aims to provide the steps that are required to retrieve data from a remote Microsoft SQL Server using the “Action” step in the Data Mapper.
 
+## Microsoft SQL Database Lookup
 
-## Prerequisites for Microsoft SQL
+### Prerequisites for Microsoft SQL
 The first part of this guide aims to provide the steps that are required to retrieve data from a remote Microsoft SQL Server using the “Action” step in the Data Mapper
 Prerequisites for Microsoft SQL
 To ensure a successful connection to Microsoft SQL Server, the below configuration should be made on the machine running your SQL Server instance:
@@ -37,7 +41,7 @@ To ensure a successful connection to Microsoft SQL Server, the below configurati
 Navigate to Connections and ensure that Allow remote connections to this server is checked. 
        ![Allow remote connections](https://github.com/rodnnr/oldatamapper-dblookupindm/blob/master/assets/4.png)
 
-## Processing SQL Statements with JDBC
+### Processing SQL Statements with JDBC
 
 In this example, we are supplied with a CSV data file, which contains information about customers’ orders’ details such as the OrderID, CustomerID and Shipping Address and dates details; but what is missing from the CSV data file is the actual customer’s name (CompanyName) and a contact name (ContactName). This information available in the Customers Table of the Northwind database, which resides on a Microsoft SQL Server.
 
@@ -68,7 +72,7 @@ if(custID){
 
  The documentation on how to build the Connection URL is available on the [MSDN website](https://docs.microsoft.com/en-us/sql/connect/jdbc/building-the-connection-url)
 
-# Application in Connect Data Mapper
+### Application in Connect Data Mapper
 
 In this example, we have a CSV data file of customers’ orders, which does not include the actual customers name and contact details. Instead, this information resides on a remote Microsoft SQL Database table. This example will demonstrate how the companyName and contactName fields can be retrieved from the [dbo].[Customers] table of the [Northwind] database.
 
@@ -131,8 +135,9 @@ sqlConnection.close();
 
 
 
+## Microsoft Access, Microsoft Excel and CSV Lookup
 
-## Prerequisites
+### Prerequisites
 
 Since OL Connect is a 64-bit application, we will need the following two prerequisites
 *	Microsoft Access Database Engine 2010 for 64-bit Windows
@@ -163,7 +168,7 @@ To create a 64-bit System DSN:
 *	Give your DSN a name. We will call it “SalesRep” for this example
  ![DSNs](https://github.com/rodnnr/oldatamapper-dblookupindm/blob/master/assets/14.png)
 
-## Building JDBC-ODBC Connection URL
+### Building JDBC-ODBC Connection URL
 The JDBC-ODBC Bridge allows Java applications to use the JDBC API with many existing ODBC drivers.
 The general form of the connection URL for Access, Excel and CSV files is:
 ```javascript
@@ -188,7 +193,8 @@ let accessConnection = db.connect(connectionURL,"","");
 */
 ```
  
-## Querying a Microsoft Access Database
+### Querying a Microsoft Access Database
+
 Once we have a JDBC connection object, we can then use it to create statements and execute queries, which will return a result set. For a Microsoft Access database, the code is as follow
 ```javascript
 let connectionURL = "jdbc:odbc:SalesRepsAccess";
@@ -202,7 +208,7 @@ if(repID){
 ```
  
 
-## Querying a Microsoft Excel Database
+### Querying a Microsoft Excel Database
 Querying a Microsoft Excel database is similar with the procedure for Access, the only difference here is that is that Microsoft Excel Sheet name you are querying from must be followed by the $ sign and enclosed in square brackets:
 ```javascript
 let connectionURL = "jdbc:odbc:SalesRepsExcel";
@@ -217,7 +223,7 @@ if(repID){
 ```
  
 
-## Querying a CSV file
+### Querying a CSV file
 The code for querying a CSV file is similar with the only difference that the table name to query from is the actual CSV file name and must be enclosed in double quotes:
 ```javascript
 let connectionURL = "jdbc:odbc:SalesRepsCSV";
@@ -232,7 +238,7 @@ if(repID){
 ```
  
 
-## Retrieving data from a Result Set
+### Retrieving data from a Result Set
 The above query return a result set object. We can then use the methods of the _ResultSet_ object, such as _getString()_, to retrieve the desired data.
 
 For example, use the following code in an_ Extract_ step to retrieve the value of the current Rep’s Email from the Access, Excel or CSV database and assign to a field in the Data Mapper:
@@ -241,7 +247,7 @@ let repEmail;
 repEmail = resultSet.getRow() ? resultSet.getString("Email") : "";
 ``` 
 
-## Closing JDBC Connections
+### Closing JDBC Connections
 It is good practice to explicitly close all connections to the database to end each database session rather than leaving the task to the Java’s garbage collection.
 To close the above opened connection, you should call close() method as follows:
 ```javascript
