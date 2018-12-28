@@ -25,6 +25,8 @@ Author: ![Rodrigue Noubissie](https://github.com/rodnnr)
     </embed>
 </object>
 
+Download ![Sample DataMapper Config File](https://github.com/rodnnr/oldatamapper-dblookupindm/archive/master.zip).
+
 ## Introduction
 
 Sometimes, the information and data that is required to build a form is scattered across multiple data sources such as Database Management Systems (DBMS) and it is often a challenge to get all the required data in one source. Luckily, the OLConnect Data Mapper can use the JDBC (Java Database Connectivity) driver to connect to these third-party DBMS. JDBC makes it possible to establish a connection with a database, send SQL statements and process the results.
