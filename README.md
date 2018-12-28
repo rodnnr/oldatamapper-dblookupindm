@@ -2,10 +2,10 @@
 # Database Lookup within Connect Data Mapper
 
 * [Introduction](#introduction)
-* [Microsoft SQL Lookup](microsoft-dsql-database-lookup)
-  * [Prerequisites for Microsoft SQL](microsoft-sql-database-lookup#prerequisites-for-microsoft-sql)
-  * [SQL Statements with JDBC]( microsoft-sql-database-lookup#processing-sql-statements-with-jdbc )
-  * [Application in Connect Data Mapper]( microsoft-sql-database-lookup#application-in-connect-data-mapper )
+* [Microsoft SQL Lookup](#microsoft-sql-database-lookup)
+  * [Prerequisites for Microsoft SQL](#prerequisites-for-microsoft-sql)
+  * [SQL Statements with JDBC](#processing-sql-statements-with-jdbc )
+  * [Application in Connect Data Mapper](#application-in-connect-data-mapper )
 
 
 <object data="https://github.com/rodnnr/olconnect-dblookupindm/blob/master/SQL_Lookup_in_Connect_DataMapper.pdf" type="application/pdf" width="700px" height="700px">
