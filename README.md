@@ -1,3 +1,4 @@
+Author: ![Rodrigue Noubissie](https://github.com/rodnnr)
 
 # Database Lookup within Connect Data Mapper
 
@@ -6,6 +7,16 @@
   * [Prerequisites for Microsoft SQL](#prerequisites-for-microsoft-sql)
   * [SQL Statements with JDBC](#processing-sql-statements-with-jdbc )
   * [Application in Connect Data Mapper](#application-in-connect-data-mapper )
+* [Access Excel and CSV Lookup](#access-excel-and-csv-lookup)
+  * [Prerequisites](#prerequisites )
+  * [Microsoft Access Database Engine 2010](#microsoft-access-database-engine-2010-for-64-bit-windows)
+  * [Create 64-bit Data Source Names](#create-64-bit-data-source-names)
+  * [Building JDBC-ODBC Connection URL ](#building-jdbc-odbc-connection-url)
+  * [Querying a Microsoft Access Database ](#querying-a-microsoft-access-database )
+  * [Querying a Microsoft Excel Database ](#querying-a-microsoft-excel-database)
+  * [Querying a CSV file ](#querying-a-csv-file )
+  * [Retrieving data from a Result Set](#retrieving-data-from-a-result-set )
+  * [Closing JDBC Connections](#closing-jdbc-connections )
 
 
 <object data="https://github.com/rodnnr/olconnect-dblookupindm/blob/master/SQL_Lookup_in_Connect_DataMapper.pdf" type="application/pdf" width="700px" height="700px">
@@ -133,9 +144,10 @@ sqlConnection.close();
 ```
 ![close connection](https://github.com/rodnnr/oldatamapper-dblookupindm/blob/master/assets/10.png)
 
+[Back to top](#introduction)
 
 
-## Microsoft Access, Microsoft Excel and CSV Lookup
+## Access Excel and CSV Lookup
 
 ### Prerequisites
 
@@ -155,7 +167,7 @@ Note that launching the installation of a Microsoft Access Database Engine in th
 To have it run properly, you need to launch it from a command line with the “/passive” argument specified:
 ![install with passive mode](https://github.com/rodnnr/oldatamapper-dblookupindm/blob/master/assets/13.png)
 
-### Create 64-bit Data Source Names (DSN)
+### Create 64-bit Data Source Names
 To create a 64-bit System DSN:
 
 *	Open the Windows Control Panel and navigate to Administrative Tools > ODBC Data Source(64-bit)
@@ -259,4 +271,5 @@ accessConnection.close();
 Reference JDBC Basics
 https://docs.oracle.com/javase/tutorial/jdbc/basics/
 
+[Back to top](#introduction)
 
